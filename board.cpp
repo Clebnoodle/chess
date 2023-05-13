@@ -14,7 +14,7 @@ Board::Board(ogstream& gout)
 {
 	this->gout = &gout;
 	this->currentMove = 0;
-	Piece board[64];
+	//Piece board[64];
 	for (int i = 8; i < 16; i++)
 	{
 		board[i] = Pawn(1, i-8, true);

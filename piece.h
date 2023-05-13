@@ -1,11 +1,12 @@
 #pragma once
 #include "position.h"
-#include "board.h"
+//#include "board.h"
 #include "move.h"
 #include <set>
 #include <string>
 
 class TestPawn;
+class Board;
 
 class Piece
 {
@@ -17,8 +18,8 @@ protected:
    int lastMove;
 
 public:
-   Piece();
-   Piece(int row, int col, bool isWhite);
+   Piece() : fWhite(true), nMoves(0), lastMove(0) {}
+   Piece(int row, int col, bool isWhite) : position(Position(row, col)), fWhite(isWhite), nMoves(0), lastMove(0) {}
    void assign(Position pos) { this->position = pos; };
    void assign(Piece piece) { 
       this->fWhite = piece.fWhite; 
@@ -26,9 +27,9 @@ public:
       this->lastMove = lastMove;
    };
    bool isWhite() { return fWhite; };
-   bool hasMoved();
+   bool hasMoved() { return nMoves != 0; }
    int getNMoves() { return nMoves; };
-   Position getPosition() { return position; };
+   Position getPosition() { return position; }
    bool justMoved(int currentMove)
    {
       if (lastMove == currentMove) {
@@ -38,8 +39,8 @@ public:
          return false;
       }
    };
-   virtual char getLetter();
-   virtual void display();
-   virtual void getMoves(std::set<Move> & moves, Board board);
+   virtual char getLetter() { return 'l'; }
+   virtual void display() {}
+   virtual void getMoves(std::set<Move>& moves, Board board);
 
 };
