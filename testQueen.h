@@ -8,8 +8,6 @@
 #include "move.h"
 using namespace std;
 
-#define PAWN_JUMP 1
-
 class Pawn;
 
 class TestPawn
@@ -631,6 +629,29 @@ private:
       // verify
       set<Move>::iterator it;
       assert(moves.size() == 19);
+
+      Move move;
+
+      move = "d5a5p";
+      it = moves.find(move);
+      assert(it != moves.end());
+
+      move = "d5h5p";
+      it = moves.find(move);
+      assert(it != moves.end());
+
+      move = "d5d7p";
+      it = moves.find(move);
+      assert(it != moves.end());
+
+      move = "d5b7p";
+      it = moves.find(move);
+      assert(it != moves.end());
+
+      move = "d5f7p";
+      it = moves.find(move);
+      assert(it != moves.end());
+
    }  // teardown
 
    /****************************
@@ -665,5 +686,19 @@ private:
       // verify
       set<Move>::iterator it;
       assert(moves.size() == 19);
+
+      Move move;
+
+      move = "d5a2p";
+      it = moves.find(move);
+      assert(it != moves.end());
+   
+      move = "d5d2p";
+      it = moves.find(move);
+      assert(it != moves.end());
+
+      move = "d5g2p";
+      it = moves.find(move);
+      assert(it != moves.end());
    }  // teardown
 };
