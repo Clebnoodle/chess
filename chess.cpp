@@ -2,10 +2,12 @@
 //
 
 #include <iostream>
+#include "testPawn.h"
 
 int main()
 {
-    std::cout << "Hello World!\n";
+   TestPawn().run();
+   std::cout << "Tests Passed!\n";
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

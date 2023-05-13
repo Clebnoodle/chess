@@ -2,7 +2,7 @@
 
 #include "piece.h"
 #include "position.h"
-#include <set>
+#include "board.h"
 
 class Queen : public Piece
 {
@@ -11,6 +11,10 @@ public:
 	{
 		this->position = Position(row, col);
 		this->fWhite = isWhite;
-	};
-	void getMoves(set<Move>& moves, Board board);
+	}
+
+	void getMoves(std::set<Move>& moves, Board board)
+	{
+
+	}
 };

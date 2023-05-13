@@ -135,6 +135,7 @@
     <ClCompile Include="knight.cpp" />
     <ClCompile Include="move.cpp" />
     <ClCompile Include="Pawn.cpp" />
+    <ClCompile Include="piece.cpp" />
     <ClCompile Include="Queen.cpp" />
     <ClCompile Include="rook.cpp" />
     <ClCompile Include="uiDraw.cpp" />

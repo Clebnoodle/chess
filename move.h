@@ -17,20 +17,20 @@ private:
    std::string error;
 
 public:
-   Move();
+   Move(): piece(' '), capture(' '), enPassant(false), castleK(false), castleQ(false), isWhite(true), promotion(' '), error("") {}
    void parse(const std::string& move);
    std::string getText();
    Position getSrc();
-   Position getDest();
-   void setSrc(Position pos);
-   void setDest(Position pos);
+   Position getDest() const { return dest; }
+   void setSrc(Position pos) { source = pos; }
+   void setDest(Position pos) { dest = pos; }
    char getPromotion();
    char getCapture();
    bool getEnPassant();
    bool getCastleK();
    bool getCastleQ();
    bool getWhiteMove();
-   void setEnPassant();
+   void setEnPassant() { enPassant = true; }
    void setPromotion() 
    {
       if (isWhite) 
@@ -45,11 +45,11 @@ public:
    void setCastle(bool isKing);
    void setCastleQ();
    void setCapture(char piece) { capture = piece; };
-   void setWhiteMove(bool isWhite);
+   void setWhiteMove(bool isWhite) { this->isWhite = isWhite; }
    void assign(Move move);
    void assign(std::string move);
    void operator<<(std::string move);
    std::string operator>>(std::string move);
-   Move& operator=(std::string& move);
-   bool operator<(Move move);
+   Move& operator=(const char* move);
+   bool operator<(const Move& move) const;
 };

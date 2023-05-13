@@ -3,6 +3,7 @@
 #include "position.h"
 #include "board.h"
 #include "uiDraw.h"
+#include <string>
 #include <set>
 #include <cassert>
 #include "move.h"
@@ -64,6 +65,8 @@ private:
       board[blackPawn1].lastMove = 1;
       board[blackPawn2].lastMove = 1;
 
+      cout << board[pos].getLetter() << endl;
+
       // exercise
       set<Move> moves;
       board[pos].getMoves(moves, board);
@@ -83,6 +86,8 @@ private:
       assert(it != moves.end());
       //teardown
    }
+
+   
 
    /****************************
    * GET MOVES BLACK EN PASSANT

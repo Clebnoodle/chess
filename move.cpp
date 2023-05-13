@@ -3,7 +3,7 @@
 using namespace std;
 
 
-Move& Move::operator=(string& move)
+Move& Move::operator=(const char* move)
 {
 	Position start;
 	Position end;
@@ -62,9 +62,9 @@ void Move::parse(const string& textMove)
 
 }
 
-bool Move::operator<(Move move)
+bool Move::operator<(const Move& move) const
 {
-   if (this->dest.getLocation() < move.getDest().getLocation()) {
+   if (this->getDest().getLocation() < move.getDest().getLocation()) {
       return true;
    }
    else

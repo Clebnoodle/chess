@@ -1,4 +1,5 @@
 #include "pawn.h"
+#include "board.h"
 using namespace std;
 
 void Pawn::getMoves(set<Move>& moves, Board board) 
@@ -35,7 +36,7 @@ void Pawn::getMoves(set<Move>& moves, Board board)
 
 	for (int col = -1; col <= 1; col += 2) 
 	{
-		posMove = Position(position.getRow() + isWhite() ? 1 : -1, position.getColumn() + col);
+		posMove = Position(position.getRow() + (isWhite() ? 1 : -1), position.getColumn() + col);
 		if (posMove.isValid() && board[posMove].getLetter() != ' ' && board[posMove].isWhite() != isWhite())
 		{
 			move.setSrc(this->getPosition());
@@ -52,10 +53,10 @@ void Pawn::getMoves(set<Move>& moves, Board board)
 
 	for (int col = -1; col <= 1; col += 2)
 	{
-		posMove = Position(position.getRow() + isWhite() ? 1 : -1, position.getColumn() + col);
+		posMove = Position(position.getRow() + (isWhite() ? 1 : -1), position.getColumn() + col);
 		Position posKill = Position(position.getRow(), position.getColumn() + col);
 		if (posMove.isValid() &&
-			position.getRow() == isWhite() ? 4 : 3 &&
+			position.getRow() == (isWhite() ? 4 : 3) &&
 			board[posMove].getLetter() == ' ' &&
 			board[posKill].getLetter() == 'p' &&
 			board[posKill].isWhite() != isWhite() &&
