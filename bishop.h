@@ -1,14 +1,13 @@
 #pragma once
-
 #include "piece.h"
-#include "position.h"
-
-class Queen : public Piece
+class Bishop :
+    public Piece
 {
 public:
-	Queen(int row, int col, bool isWhite)
+	Bishop(int row, int col, bool isWhite)
 	{
 		this->position = Position(row, col);
 		this->fWhite = isWhite;
 	};
 };
+

@@ -1,4 +1,6 @@
 #pragma once
+#include "position.h"
+#include <string>
 
 class Move
 {
@@ -11,13 +13,17 @@ private:
    bool castleK;
    bool castleQ;
    bool isWhite;
-   string error;
+   char promotion;
+   std::string error;
 
 public:
    Move();
-   string getText();
+   void parse(const std::string& move);
+   std::string getText();
    Position getSrc();
    Position getDest();
+   void setSrc(Position pos);
+   void setDest(Position pos);
    char getPromotion();
    char getCapture();
    bool getEnPassant();
@@ -25,11 +31,25 @@ public:
    bool getCastleQ();
    bool getWhiteMove();
    void setEnPassant();
+   void setPromotion() 
+   {
+      if (isWhite) 
+      {
+         promotion = 'q';
+      }
+      else
+      {
+         promotion = 'Q';
+      }
+   };
    void setCastle(bool isKing);
    void setCastleQ();
-   void setWhiteMove();
+   void setCapture(char piece) { capture = piece; };
+   void setWhiteMove(bool isWhite);
    void assign(Move move);
-   void assign(string move);
-   void operator<<(string move);
-   string operator>>(string move);
+   void assign(std::string move);
+   void operator<<(std::string move);
+   std::string operator>>(std::string move);
+   Move& operator=(std::string& move);
+   bool operator<(Move move);
 };

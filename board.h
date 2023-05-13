@@ -4,18 +4,19 @@
 #include "position.h"
 #include "move.h"
 
+
 class Board
 {
 private:
    Piece board[64];
    int currentMove;
-   ogstream gout;
-   void swap(Position pos1, Position pos2);
+   ogstream *gout;
 
 public:
+   Board();
    Board(ogstream & gout);
-   int getCurrentMove();
-   bool whiteTUrn();
+   int getCurrentMove() { return currentMove; };
+   bool whiteTurn();
    void display(Position posHover, Position posSelect);
    Piece get(Position pos);
    void free();
@@ -23,7 +24,12 @@ public:
    void move(Move move);
    void assign(Move move);
    void assertBoard();
-   Piece& operator[](Position index);
-
+   void swap(Position pos1, Position pos2);
+   Piece& operator[](Position pos)
+   {
+      char location = pos.getLocation();
+      return board[location];
+   }
 };
+
 

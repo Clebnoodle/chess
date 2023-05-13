@@ -1,6 +1,7 @@
 #pragma once
 #include "position.h"
 #include "board.h"
+#include "move.h"
 #include <set>
 #include <string>
 
@@ -16,20 +17,21 @@ protected:
    int lastMove;
 
 public:
+   Piece();
    Piece(int row, int col, bool isWhite);
-   void assign(Position pos);
+   void assign(Position pos) { this->position = pos; };
    void assign(Piece piece) { 
       this->fWhite = piece.fWhite; 
       this->nMoves = piece.nMoves;
       this->lastMove = lastMove;
    };
    bool isWhite() { return fWhite; };
-   bool isMove();
+   bool hasMoved();
    int getNMoves() { return nMoves; };
    Position getPosition() { return position; };
-   bool justMoved()
+   bool justMoved(int currentMove)
    {
-      if (lastMove != 0) {
+      if (lastMove == currentMove) {
          return true;
       }
       else {

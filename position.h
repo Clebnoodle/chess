@@ -10,7 +10,11 @@ private:
 
 public:
    Position();
-   Position(string pos);
+   Position(std::string pos);
+   Position(int row, int col) 
+   {
+      this->location = 8 * row + col;
+   };
    int getLocation() { return location; };
    int getRow();
    int getColumn();
