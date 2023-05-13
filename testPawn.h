@@ -62,14 +62,14 @@ private:
       board.swap(Position("c7"), Position("c5"));
       Position blackPawn1("a5");
       Position blackPawn2("c5");
-      board[blackPawn1]->lastMove = 1;
-      board[blackPawn2]->lastMove = 1;
+      board[blackPawn1].lastMove = 1;
+      board[blackPawn2].lastMove = 1;
 
-      cout << board[pos]->getLetter() << endl;
+      cout << board[pos].getLetter() << endl;
 
       // exercise
       set<Move> moves;
-      board[pos]->getMoves(moves, board);
+      board[pos].getMoves(moves, board);
 
       // verify
       set<Move>::iterator it;
