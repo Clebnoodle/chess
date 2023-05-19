@@ -2,7 +2,7 @@
 #include "board.h"
 using namespace std;
 
-void Pawn::getMoves(set<Move>& moves, Board board) 
+void Pawn::getMoves(set<Move>& moves, Board &board) 
 {
 	Position posMove = getPosition();
 	posMove.adjustRow(isWhite() ? 1 : -1);

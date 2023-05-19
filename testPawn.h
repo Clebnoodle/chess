@@ -16,8 +16,6 @@ class TestPawn
 public:
    void run()
    {
-      test_pawn_whiteEnPassant();
-      test_pawn_blackEnPassant();
 
       test_pawn_moveUpOnce();
       test_pawn_moveUpTwice();
@@ -32,6 +30,9 @@ public:
       test_pawn_blackTake();
       
       test_pawn_promotion();
+
+      test_pawn_whiteEnPassant();
+      test_pawn_blackEnPassant();
    }
 
 private:
@@ -65,10 +66,12 @@ private:
       board[blackPawn1].lastMove = 1;
       board[blackPawn2].lastMove = 1;
 
-      cout << board[pos].getLetter() << endl;
+      //cout << board[pos].getLetter() << endl;
 
       // exercise
       set<Move> moves;
+      Piece test = board[pos];
+
       board[pos].getMoves(moves, board);
 
       // verify

@@ -19,7 +19,11 @@ protected:
 
 public:
    Piece() : fWhite(true), nMoves(0), lastMove(0) {}
-   Piece(int row, int col, bool isWhite) : position(Position(row, col)), fWhite(isWhite), nMoves(0), lastMove(0) {}
+   Piece(int row, int col, bool isWhite) : fWhite(isWhite), nMoves(0), lastMove(0) 
+   {
+      Position location = Position(row, col);
+      this->position = location;
+   }
    void assign(Position pos) { this->position = pos; };
    void assign(Piece piece) { 
       this->fWhite = piece.fWhite; 
@@ -30,6 +34,10 @@ public:
    bool hasMoved() { return nMoves != 0; }
    int getNMoves() { return nMoves; };
    Position getPosition() { return position; }
+   void setPosition(Position pos) {
+
+      position = pos;
+   }
    bool justMoved(int currentMove)
    {
       if (lastMove == currentMove) {
@@ -41,6 +49,6 @@ public:
    };
    virtual char getLetter() { return 'l'; }
    virtual void display() {}
-   virtual void getMoves(std::set<Move>& moves, Board board);
+   virtual void getMoves(std::set<Move>& moves, Board &board);
 
 };

@@ -8,5 +8,10 @@ public:
 	{
 
 	}
+
+	char getLetter()
+	{
+		return ' ';
+	}
 };
 
