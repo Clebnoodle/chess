@@ -3,10 +3,12 @@
 
 #include <iostream>
 #include "testPawn.h"
+#include "testQueen.h"
 
 int main()
 {
-   TestPawn().run();
+   //TestPawn().run();
+   TestQueen().run();
    std::cout << "Tests Passed!\n";
 }
 

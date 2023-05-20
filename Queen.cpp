@@ -14,14 +14,15 @@ void Queen::getMoves(set<Move> &moves, Board &board)
 {
 	Delta delta[8] =
 	{
-		(-1,1), (0,1), (1,1), (-1,0), (1,0), (-1,-1), (0,-1), (1,-1)
+		{-1,1 }, {0, 1}, {1, 1}, {-1, 0}, {1, 0}, {-1, -1}, {0, -1}, {1, -1}
 	};
+
 	for (int i = 0; i < sizeof(delta) / sizeof(delta[0]); i++)
 	{
-		
+		Delta test = delta[i];
 		Position posMove = Position(getPosition());
-		posMove.adjustCol(delta[i].col);
-		posMove.adjustRow(delta[i].row);
+		posMove.adjustCol(test.col);
+		posMove.adjustRow(test.row);
 		while (posMove.isValid() && board[posMove].getLetter() == ' ')
 		{
 			Move move;

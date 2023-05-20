@@ -22,13 +22,12 @@ Board::Board(ogstream& gout)
 
 	for (int j = 48; j < 56; j++)
 	{
-		
-		board[j] = new Pawn(6, j - 8, false);
+		board[j] = new Pawn(6, j - 48, false);
 	}
+
 	for (int k = 16; k < 48; k++)
 	{
-		
-		board[k] = new Empty();
+		board[k] = new Empty(k);
 	}
 	
 	board[0] = new Rook(0, 0, true);

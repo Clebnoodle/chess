@@ -64,7 +64,11 @@ private:
       Position blackPawn1("a5");
       Position blackPawn2("c5");
       board[blackPawn1].lastMove = 1;
+      board[blackPawn1].nMoves = 1;
       board[blackPawn2].lastMove = 1;
+      board[blackPawn2].nMoves = 1;
+      board.setCurrentMove(1);
+      board[pos].nMoves = 1;
 
       //cout << board[pos].getLetter() << endl;
 
@@ -117,10 +121,14 @@ private:
       board.swap(Position("d2"), Position("d4"));
       board.swap(Position("e2"), Position("e3"));
       board.swap(Position("f2"), Position("f4"));
-      Position blackPawn1("d4");
-      Position blackPawn2("f4");
-      board[blackPawn1].lastMove = 1;
-      board[blackPawn2].lastMove = 1;
+      Position whitePawn1("d4");
+      Position whitePawn2("f4");
+      board[whitePawn1].lastMove = 1;
+      board[whitePawn1].nMoves = 1;
+      board[whitePawn2].lastMove = 1;
+      board[whitePawn2].nMoves = 1;
+      board.setCurrentMove(1);
+      board[pos].nMoves = 1;
 
       // exercise
       set<Move> moves;
@@ -466,7 +474,7 @@ private:
       board.swap(Position("d8"), Position("d6"));
       board.swap(Position("c8"), Position("c6"));
       board.swap(Position("e8"), Position("e6"));
-
+      board[pos].nMoves = 1;
 
       // exercise
       set<Move> moves;

@@ -1,6 +1,6 @@
 #include "pawn.h"
 #include "board.h"
-#include <iostream>
+
 using namespace std;
 
 void Pawn::getMoves(set<Move>& moves, Board &board) 
@@ -26,8 +26,6 @@ void Pawn::getMoves(set<Move>& moves, Board &board)
 	{
 		posMove = Position(isWhite() ? 3 : 4, getPosition().getColumn());
 		Position posCheck = Position(isWhite() ? 2 : 5, getPosition().getColumn());
-		cout << board[posMove].getLetter();
-		cout << board[posCheck].getLetter();
 
 		if (board[posMove].getLetter() == ' ' && board[posCheck].getLetter() == ' ')
 		{

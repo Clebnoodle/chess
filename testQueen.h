@@ -8,9 +8,9 @@
 #include "move.h"
 using namespace std;
 
-class Pawn;
+class Queen;
 
-class TestPawn
+class TestQueen
 {
 public:
    void run()
@@ -675,9 +675,8 @@ private:
       ogstream gout;
       Board board(gout);
       Position pos("d5");
-      board.swap(Position("d1"), pos);
-      board.swap(Position("a7"), Position("a5"));
-      board.swap(Position("h7"), Position("h5"));
+      board.swap(Position("d8"), pos);
+      
 
       // exercise
       set<Move> moves;

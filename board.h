@@ -16,6 +16,7 @@ public:
    //Board();
    Board(ogstream & gout);
    int getCurrentMove() { return currentMove; }
+   void setCurrentMove(int move) { currentMove = move; }
    //bool whiteTurn();
    //void display(Position posHover, Position posSelect);
    Piece& get(Position pos);

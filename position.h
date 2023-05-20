@@ -31,12 +31,28 @@ public:
    //int getY();
    bool isValid() { return (location >= 0 && location <= 63); };
    //void setRow(int row);
-   //void setCol(int col);
+   //void setCol(int col) { location += col; }
    //void set(int row, int col);
+   void setIndex(char location) 
+   {
+      this->location = location;
+   }
    void adjustRow(int dRow) { location += dRow * 8; };
-   void adjustCol(int dCol) { location += dCol; };
+   void adjustCol(int dCol) 
+   { 
+      int col = getColumn();
+      col += dCol;
+      if (col >= 0 && col <= 7) 
+      {
+        location = 8 * getRow() + col;
+      }
+      else 
+      {
+         location = -1;
+      }
+   }
    //bool operator==(Position rhs);
-   Position& operator=(Position rhs) 
+   const Position& operator=(const Position& rhs) 
    { 
       location = rhs.location;
       squareHeight = rhs.squareHeight;
