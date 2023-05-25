@@ -7,7 +7,7 @@
 
 int main()
 {
-   //TestPawn().run();
+   TestPawn().run();
    TestQueen().run();
    std::cout << "Tests Passed!\n";
 }

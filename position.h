@@ -1,6 +1,12 @@
 #pragma once
 #include <string>
 
+struct Delta
+{
+   int row;
+   int col;
+};
+
 class Position
 {
 private:

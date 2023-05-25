@@ -1,6 +1,5 @@
 #pragma once
 #include "position.h"
-//#include "board.h"
 #include "move.h"
 #include <set>
 #include <string>
@@ -16,6 +15,8 @@ protected:
    bool fWhite;
    int nMoves;
    int lastMove;
+
+   void getMovesSlide(std::set<Move>& moves, Board& board, Delta delta[], int size);
 
 public:
    Piece() : fWhite(true), nMoves(0), lastMove(0) {}
