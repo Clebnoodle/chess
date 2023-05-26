@@ -42,8 +42,17 @@ public:
          promotion = 'Q';
       }
    };
-   void setCastle(bool isKing);
-   void setCastleQ();
+   void setCastle(bool isKing)
+   {
+      if (isKing)
+      {
+         castleK = true;
+      }
+      else 
+      {
+         castleQ = true;
+      }
+   }
    void setCapture(char piece) { capture = piece; };
    void setWhiteMove(bool isWhite) { this->isWhite = isWhite; }
    void assign(Move move);

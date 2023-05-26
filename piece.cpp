@@ -38,3 +38,27 @@ void Piece::getMovesSlide(std::set<Move>& moves, Board& board, Delta delta[], in
 		}
 	}
 }
+
+void Piece::getMovesNoSlide(std::set<Move>& moves, Board& board, Delta delta[], int size)
+{
+	for (int i = 0; i < size; i++)
+	{
+		Delta test = delta[i];
+		Position posMove = Position(getPosition());
+		posMove.adjustCol(test.col);
+		posMove.adjustRow(test.row);
+		if (posMove.isValid() && (board[posMove].isWhite() != fWhite || board[posMove].getLetter() == ' '))
+		{
+			Move move;
+			move.setSrc(getPosition());
+			move.setDest(posMove);
+			move.setWhiteMove(isWhite());
+			if (board[posMove].getLetter() != ' ')
+			{
+				move.setCapture(board[posMove].getLetter());
+			}
+			moves.insert(move);
+		}
+
+	}
+}

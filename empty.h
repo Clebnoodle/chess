@@ -8,14 +8,8 @@ public:
 	{
 		this->position.setIndex(location);
 	}
-	void getMoves(std::set<Move>& moves, Board board)
-	{
+	void getMoves(std::set<Move>& moves, Board board);
 
-	}
-
-	char getLetter()
-	{
-		return ' ';
-	}
+	char getLetter() { return ' '; }
 };
 

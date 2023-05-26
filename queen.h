@@ -14,4 +14,6 @@ public:
 	}
 
 	void getMoves(std::set<Move>& moves, Board& board);
+	char getLetter() { return 'q'; };
+	void display(ogstream gout);
 };

@@ -1,7 +1,13 @@
+#include "position.h"
 #include "pawn.h"
 #include "board.h"
 
 using namespace std;
+
+void Pawn::display(ogstream gout)
+{
+	gout.drawPawn(position.getLocation(), isWhite());
+}
 
 void Pawn::getMoves(set<Move>& moves, Board &board) 
 {

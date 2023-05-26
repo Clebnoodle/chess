@@ -4,7 +4,10 @@
 using namespace std;
 
 
-
+void Queen::display(ogstream gout) 
+{
+	gout.drawQueen(position.getLocation(), isWhite());
+}
 
 void Queen::getMoves(set<Move> &moves, Board &board) 
 {

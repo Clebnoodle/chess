@@ -18,4 +18,5 @@ public:
 	{
 		return 'p';
 	}
+	void display(ogstream gout);
 };

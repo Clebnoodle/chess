@@ -13,9 +13,8 @@ public:
 		this->fWhite = isWhite;
 	}
 
-	void getMoves(std::set<Move>& moves, Board board)
-	{
-
-	}
+	void getMoves(std::set<Move>& moves, Board& board);
+	char getLetter() { return 'r'; }
+	void display(ogstream gout);
 };
 

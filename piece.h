@@ -17,6 +17,7 @@ protected:
    int lastMove;
 
    void getMovesSlide(std::set<Move>& moves, Board& board, Delta delta[], int size);
+   void getMovesNoSlide(std::set<Move>& moves, Board& board, Delta delta[], int size);
 
 public:
    Piece() : fWhite(true), nMoves(0), lastMove(0) {}
@@ -49,7 +50,7 @@ public:
       }
    };
    virtual char getLetter() { return 'l'; }
-   virtual void display() {}
+   virtual void display(ogstream gout) {}
    virtual void getMoves(std::set<Move>& moves, Board &board);
 
 };
