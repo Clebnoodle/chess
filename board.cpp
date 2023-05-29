@@ -17,12 +17,12 @@ Board::Board(ogstream& gout)
 	//Piece board[64];
 	for (int i = 8; i < 16; i++)
 	{
-		board[i] = new Pawn(1, i - 8, false);
+		board[i] = new Pawn(1, i - 8, true);
 	}
 
 	for (int j = 48; j < 56; j++)
 	{
-		board[j] = new Pawn(6, j - 48, true);
+		board[j] = new Pawn(6, j - 48, false);
 	}
 
 	for (int k = 16; k < 48; k++)
@@ -30,37 +30,37 @@ Board::Board(ogstream& gout)
 		board[k] = new Empty(k);
 	}
 	
-	board[0] = new Rook(0, 0, false);
+	board[0] = new Rook(0, 0, true);
 	
-	board[1] = new Knight(0, 1, false);
+	board[1] = new Knight(0, 1, true);
 	
-	board[2] = new Bishop(0, 2, false);
+	board[2] = new Bishop(0, 2, true);
 
-	board[3] = new Queen(0, 3, false);
+	board[3] = new Queen(0, 3, true);
 
-	board[4] = new King(0, 4, false);
+	board[4] = new King(0, 4, true);
 
-	board[5] = new Bishop(0, 5, false);
+	board[5] = new Bishop(0, 5, true);
 
-	board[6] = new Knight(0, 6, false);
+	board[6] = new Knight(0, 6, true);
 
-	board[7] = new Rook(0, 7, false);
+	board[7] = new Rook(0, 7, true);
 
-	board[56] = new Rook(7, 0, true);
+	board[56] = new Rook(7, 0, false);
 
-	board[57] = new Knight(7, 1, true);
+	board[57] = new Knight(7, 1, false);
 
-	board[58] = new Bishop(7, 2, true);
+	board[58] = new Bishop(7, 2, false);
 
-	board[59] = new Queen(7, 3, true);
+	board[59] = new Queen(7, 3, false);
 
-	board[60] = new King(7, 4, true);
+	board[60] = new King(7, 4, false);
 
-	board[61] = new Bishop(7, 5, true);
+	board[61] = new Bishop(7, 5, false);
 
-	board[62] = new Knight(7, 6, true);
+	board[62] = new Knight(7, 6, false);
 
-	board[63] = new Rook(7, 7, true);
+	board[63] = new Rook(7, 7, false);
 
 }
 
@@ -74,7 +74,7 @@ void Board::display(Position posHover, Position posSelect)
 	{
 		set<Move> possible;
 		board[posSelect.getLocation()]->getMoves(possible, *this);
-		set<Move>::iterator it;
+		set<Move>::iterator it = possible.begin();
 		for (it; it != possible.end(); it++)
 		{
 			Move move = *it;
@@ -82,7 +82,7 @@ void Board::display(Position posHover, Position posSelect)
 		}
 	}
 
-	for (int i = 0; i < 63; i++)
+	for (int i = 0; i < 64; i++)
 	{
 		board[i]->display(*gout);
 	}
