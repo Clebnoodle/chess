@@ -7,7 +7,7 @@ using namespace std;
 
 void Rook::display(ogstream& gout)
 {
-	gout.drawRook(position.getLocation(), isWhite());
+	gout.drawRook(position.getLocation(), !isWhite());
 }
 
 void Rook::getMoves(set<Move>& moves, Board& board)

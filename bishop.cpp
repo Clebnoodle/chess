@@ -7,7 +7,7 @@ using namespace std;
 
 void Bishop::display(ogstream& gout)
 {
-	gout.drawBishop(position.getLocation(),isWhite());
+	gout.drawBishop(position.getLocation(), !isWhite());
 }
 
 void Bishop::getMoves(set<Move>& moves, Board& board)

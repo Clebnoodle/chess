@@ -7,7 +7,7 @@ using namespace std;
 
 void Knight::display(ogstream& gout)
 {
-	gout.drawKnight(position.getLocation(), isWhite());
+	gout.drawKnight(position.getLocation(), !isWhite());
 }
 
 void Knight::getMoves(set<Move>& moves, Board& board)

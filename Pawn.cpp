@@ -7,7 +7,7 @@ using namespace std;
 
 void Pawn::display(ogstream& gout)
 {
-	gout.drawPawn(position.getLocation(), isWhite());
+	gout.drawPawn(position.getLocation(), !isWhite());
 }
 
 void Pawn::getMoves(set<Move>& moves, Board &board) 
