@@ -62,6 +62,11 @@ void Move::parse(const string& textMove)
 
 }
 
+string Move::getText()
+{
+   return "";
+}
+
 bool Move::operator<(const Move& move) const
 {
    if (this->getDest().getLocation() < move.getDest().getLocation()) {

@@ -2,6 +2,7 @@
 #include "pawn.h"
 #include "board.h"
 
+
 using namespace std;
 
 void Pawn::display(ogstream gout)
