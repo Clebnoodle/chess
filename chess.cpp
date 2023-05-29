@@ -9,9 +9,11 @@
 #include <set>
 
 
-void callback(Interface ui, Board& board)
+void callback(Interface* pUi, void* p)
 {
-   if (!Position(ui.getPreviousPosition()).isValid() && !ui.getSelectPosition().isValid())
+   Board board = *(Board*)p;
+   Interface ui = *pUi;
+   if (!Position(ui.getPreviousPosition()).isValid() && !Position(ui.getSelectPosition()).isValid())
    {
       if (board[ui.getSelectPosition()].getLetter() == ' ')
       {
@@ -23,7 +25,7 @@ void callback(Interface ui, Board& board)
       }
    }
 
-   if (ui.getPreviousPosition().isValid() && ui.getSelectPosition().isValid())
+   if (Position(ui.getPreviousPosition()).isValid() && Position(ui.getSelectPosition()).isValid())
    {
       Move move;
       move.setSrc(ui.getPreviousPosition());
@@ -50,7 +52,8 @@ int main()
 {
    Interface ui("Chess");
    ogstream gout;
-   ui.run(callback);
+   Board board(gout);
+   ui.run(callback, &board);
    TestPawn().run();
    TestQueen().run();
    std::cout << "Tests Passed!\n";
