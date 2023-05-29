@@ -4,7 +4,7 @@
 using namespace std;
 
 
-void Queen::display(ogstream gout) 
+void Queen::display(ogstream& gout) 
 {
 	gout.drawQueen(position.getLocation(), isWhite());
 }

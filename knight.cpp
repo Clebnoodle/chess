@@ -5,7 +5,7 @@
 using namespace std;
 
 
-void Knight::display(ogstream gout)
+void Knight::display(ogstream& gout)
 {
 	gout.drawKnight(position.getLocation(), isWhite());
 }

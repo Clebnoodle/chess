@@ -5,7 +5,7 @@
 using namespace std;
 
 
-void Rook::display(ogstream gout)
+void Rook::display(ogstream& gout)
 {
 	gout.drawRook(position.getLocation(), isWhite());
 }

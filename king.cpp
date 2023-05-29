@@ -5,7 +5,7 @@
 using namespace std;
 
 
-void King::display(ogstream gout)
+void King::display(ogstream& gout)
 {
 	gout.drawKing(position.getLocation(), isWhite());
 }

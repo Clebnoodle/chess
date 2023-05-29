@@ -81,6 +81,11 @@ void Board::display(Position posHover, Position posSelect)
 			gout->drawPossible(move.getDest().getLocation());
 		}
 	}
+
+	for (int i = 0; i < 63; i++)
+	{
+		board[i]->display(*gout);
+	}
 }
 
 Piece& Board::get(Position pos) 

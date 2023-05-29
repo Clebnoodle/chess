@@ -5,7 +5,7 @@
 using namespace std;
 
 
-void Bishop::display(ogstream gout)
+void Bishop::display(ogstream& gout)
 {
 	gout.drawBishop(position.getLocation(),isWhite());
 }

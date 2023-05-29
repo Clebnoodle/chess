@@ -52,7 +52,7 @@ public:
       }
    };
    virtual PieceType getLetter() { return EMPTY; };
-   virtual void display(ogstream gout) {}
+   virtual void display(ogstream &gout) {}
    virtual void getMoves(std::set<Move>& moves, Board &board);
 
 };

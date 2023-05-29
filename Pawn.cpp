@@ -5,7 +5,7 @@
 
 using namespace std;
 
-void Pawn::display(ogstream gout)
+void Pawn::display(ogstream& gout)
 {
 	gout.drawPawn(position.getLocation(), isWhite());
 }
