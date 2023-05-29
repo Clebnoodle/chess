@@ -22,8 +22,8 @@ protected:
    void getMovesNoSlide(std::set<Move>& moves, Board& board, Delta delta[], int size);
 
 public:
-   Piece() : fWhite(true), nMoves(0), lastMove(0) {}
-   Piece(int row, int col, bool isWhite) : fWhite(isWhite), nMoves(0), lastMove(0) 
+   Piece() : fWhite(true), nMoves(0), lastMove(-1) {}
+   Piece(int row, int col, bool isWhite) : fWhite(isWhite), nMoves(0), lastMove(-1) 
    {
       Position location = Position(row, col);
       this->position = location;
@@ -44,7 +44,7 @@ public:
    }
    bool justMoved(int currentMove)
    {
-      if (lastMove == currentMove) {
+      if (lastMove == currentMove - 1) {
          return true;
       }
       else {

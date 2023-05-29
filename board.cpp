@@ -13,7 +13,7 @@ using namespace std;
 Board::Board(ogstream& gout)
 {
 	this->gout = &gout;
-	this->currentMove = 0;
+	this->currentMove = 1;
 	//Piece board[64];
 	for (int i = 8; i < 16; i++)
 	{
