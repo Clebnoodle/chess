@@ -136,6 +136,7 @@
     <ClCompile Include="move.cpp" />
     <ClCompile Include="Pawn.cpp" />
     <ClCompile Include="piece.cpp" />
+    <ClCompile Include="position.cpp" />
     <ClCompile Include="Queen.cpp" />
     <ClCompile Include="rook.cpp" />
     <ClCompile Include="uiDraw.cpp" />
@@ -150,6 +151,7 @@
     <ClInclude Include="move.h" />
     <ClInclude Include="pawn.h" />
     <ClInclude Include="piece.h" />
+    <ClInclude Include="pieceType.h" />
     <ClInclude Include="position.h" />
     <ClInclude Include="queen.h" />
     <ClInclude Include="rook.h" />

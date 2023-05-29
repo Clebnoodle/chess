@@ -10,6 +10,6 @@ public:
 	}
 	void getMoves(std::set<Move>& moves, Board board);
 
-	char getLetter() { return ' '; }
+	PieceType getLetter() { return EMPTY; }
 };
 

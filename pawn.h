@@ -14,9 +14,6 @@ public:
 	};
 	void getMoves(std::set<Move> &moves, Board &board);
 
-	char getLetter()
-	{
-		return 'p';
-	}
+	PieceType getLetter() {	return PAWN; }
 	void display(ogstream gout);
 };

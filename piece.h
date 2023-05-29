@@ -4,6 +4,7 @@
 #include "uiDraw.h"
 #include <set>
 #include <string>
+#include "pieceType.h"
 
 class TestPawn;
 class Board;
@@ -50,7 +51,7 @@ public:
          return false;
       }
    };
-   virtual char getLetter() { return 'l'; }
+   virtual PieceType getLetter() { return EMPTY; };
    virtual void display(ogstream gout) {}
    virtual void getMoves(std::set<Move>& moves, Board &board);
 

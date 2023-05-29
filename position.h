@@ -1,5 +1,8 @@
 #pragma once
 #include <string>
+using std::string;
+using std::ostream;
+using std::istream;
 
 struct Delta
 {
@@ -24,21 +27,41 @@ public:
       squareHeight = 1;
       squareWidth = 1;
    }
+   Position(int index): location(index), squareHeight(1), squareWidth(1) {}
    Position(int row, int col) 
    {
       this->location = 8 * row + col;
       squareHeight = 1;
       squareWidth = 1;
    };
-   int getLocation() { return location; };
-   int getRow() { return location / 8; };
-   int getColumn() { return location % 8; };
+   int getLocation() const { return location; };
+   int getRow() const { return location / 8; };
+   int getColumn() const { return location % 8; };
    //int getX();
    //int getY();
-   bool isValid() { return (location >= 0 && location <= 63); };
-   //void setRow(int row);
-   //void setCol(int col) { location += col; }
-   //void set(int row, int col);
+   bool isValid() const { return (location >= 0 && location <= 63); };
+   
+   void setRow(int r)
+   {
+      if (r >= 0 && r < 8 && isValid())
+      {
+         char c = getColumn();
+         location = (char)r * 8 + c;
+      }
+      else
+         location = -1;
+   }
+   void setCol(int c)
+   {
+      if (c >= 0 && c < 8 && isValid())
+      {
+         char r = getRow();
+         location = r * 8 + (char)c;
+      }
+      else
+         location = -1;
+   }
+   void set(int r, int c) { location = 0; setRow(r); setCol(c); }
    void setIndex(char location) 
    {
       this->location = location;
@@ -65,7 +88,11 @@ public:
       squareWidth = rhs.squareWidth;
       return *this;
    }
+
+   const Position& operator =  (const char* rhs);
    //void operator+(Position rhs);
-   //void operator<<(Position rhs);
+   
    //void operator>>(Position rhs);
 };
+
+ostream& operator << (ostream& out, const Position& pos);

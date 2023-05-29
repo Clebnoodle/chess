@@ -14,7 +14,7 @@ void Piece::getMovesSlide(std::set<Move>& moves, Board& board, Delta delta[], in
 		Position posMove = Position(getPosition());
 		posMove.adjustCol(test.col);
 		posMove.adjustRow(test.row);
-		while (posMove.isValid() && board[posMove].getLetter() == ' ')
+		while (posMove.isValid() && board[posMove].getLetter() == EMPTY)
 		{
 			Move move;
 			move.setSrc(getPosition());
@@ -24,13 +24,13 @@ void Piece::getMovesSlide(std::set<Move>& moves, Board& board, Delta delta[], in
 			posMove.adjustCol(delta[i].col);
 			posMove.adjustRow(delta[i].row);
 		}
-		if (posMove.isValid() && (board[posMove].isWhite() != fWhite || board[posMove].getLetter() == ' '))
+		if (posMove.isValid() && (board[posMove].isWhite() != fWhite || board[posMove].getLetter() == EMPTY))
 		{
 			Move move;
 			move.setSrc(getPosition());
 			move.setDest(posMove);
 			move.setWhiteMove(isWhite());
-			if (board[posMove].getLetter() != ' ')
+			if (board[posMove].getLetter() != EMPTY)
 			{
 				move.setCapture(board[posMove].getLetter());
 			}
@@ -47,13 +47,13 @@ void Piece::getMovesNoSlide(std::set<Move>& moves, Board& board, Delta delta[], 
 		Position posMove = Position(getPosition());
 		posMove.adjustCol(test.col);
 		posMove.adjustRow(test.row);
-		if (posMove.isValid() && (board[posMove].isWhite() != fWhite || board[posMove].getLetter() == ' '))
+		if (posMove.isValid() && (board[posMove].isWhite() != fWhite || board[posMove].getLetter() == EMPTY))
 		{
 			Move move;
 			move.setSrc(getPosition());
 			move.setDest(posMove);
 			move.setWhiteMove(isWhite());
-			if (board[posMove].getLetter() != ' ')
+			if (board[posMove].getLetter() != EMPTY)
 			{
 				move.setCapture(board[posMove].getLetter());
 			}

@@ -12,7 +12,7 @@ public:
 	}
 
 	void getMoves(std::set<Move>& moves, Board& board);
-	char getLetter() { return 'k'; }
+	PieceType getLetter() { return KING; }
 	void display(ogstream gout);
 };
 

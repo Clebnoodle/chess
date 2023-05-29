@@ -10,4 +10,4 @@
 
 #pragma once
 
-enum PieceType { SPACE, KING, QUEEN, ROOK, BISHOP, KNIGHT, PAWN };
+enum PieceType { EMPTY, KING, QUEEN, ROOK, BISHOP, KNIGHT, PAWN };

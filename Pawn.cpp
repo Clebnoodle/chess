@@ -17,7 +17,7 @@ void Pawn::getMoves(set<Move>& moves, Board &board)
 	posMove.adjustRow(isWhite() ? 1 : -1);
 	Move move;
 
-	if (posMove.isValid() && board[posMove].getLetter() == ' ')
+	if (posMove.isValid() && board[posMove].getLetter() == EMPTY)
 	{
 		move.setSrc(getPosition());
 		move.setDest(posMove);
@@ -25,7 +25,7 @@ void Pawn::getMoves(set<Move>& moves, Board &board)
 
 		if (posMove.getRow() == 7 || posMove.getRow() == 0)
 		{
-			move.setPromotion();
+			move.setPromotion(QUEEN);
 		}
 		moves.insert(move);
 	}
@@ -34,7 +34,7 @@ void Pawn::getMoves(set<Move>& moves, Board &board)
 		posMove = Position(isWhite() ? 3 : 4, getPosition().getColumn());
 		Position posCheck = Position(isWhite() ? 2 : 5, getPosition().getColumn());
 
-		if (board[posMove].getLetter() == ' ' && board[posCheck].getLetter() == ' ')
+		if (board[posMove].getLetter() == EMPTY && board[posCheck].getLetter() == EMPTY)
 		{
 			move.setSrc(getPosition());
 			move.setDest(posMove);
@@ -46,7 +46,7 @@ void Pawn::getMoves(set<Move>& moves, Board &board)
 	for (int col = -1; col <= 1; col += 2) 
 	{
 		posMove = Position(position.getRow() + (isWhite() ? 1 : -1), position.getColumn() + col);
-		if (posMove.isValid() && board[posMove].getLetter() != ' ' && board[posMove].isWhite() != isWhite())
+		if (posMove.isValid() && board[posMove].getLetter() != EMPTY && board[posMove].isWhite() != isWhite())
 		{
 			move.setSrc(this->getPosition());
 			move.setDest(posMove);
@@ -54,7 +54,7 @@ void Pawn::getMoves(set<Move>& moves, Board &board)
 			move.setCapture(board[posMove].getLetter());
 			if (posMove.getRow() == 7 || posMove.getRow() == 0)
 			{
-				move.setPromotion();
+				move.setPromotion(QUEEN);
 			}
 			moves.insert(move);
 		}
@@ -66,8 +66,8 @@ void Pawn::getMoves(set<Move>& moves, Board &board)
 		Position posKill = Position(position.getRow(), position.getColumn() + col);
 		if (posMove.isValid() &&
 			position.getRow() == (isWhite() ? 4 : 3) &&
-			board[posMove].getLetter() == ' ' &&
-			board[posKill].getLetter() == 'p' &&
+			board[posMove].getLetter() == EMPTY &&
+			board[posKill].getLetter() == PAWN &&
 			board[posKill].isWhite() != isWhite() &&
 			board[posKill].getNMoves() == 1 &&
 			board[posKill].justMoved(board.getCurrentMove())) 
