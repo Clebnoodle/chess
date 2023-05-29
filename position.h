@@ -37,9 +37,10 @@ public:
    int getLocation() const { return location; };
    int getRow() const { return location / 8; };
    int getColumn() const { return location % 8; };
-   //int getX();
-   //int getY();
-   bool isValid() const { return (location >= 0 && location <= 63); };
+
+   //bool isValid() const { return (location >= 0 && location <= 63); };
+   bool isInvalid() const { return location < 0 || location >= 64; }
+   bool isValid()   const { return !isInvalid(); }
    
    void setRow(int r)
    {

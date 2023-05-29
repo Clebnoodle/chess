@@ -16,7 +16,13 @@ public:
    Board(ogstream & gout);
    int getCurrentMove() { return currentMove; }
    void setCurrentMove(int move) { currentMove = move; }
-   bool whiteTurn();
+   bool whiteTurn()
+   {
+      if (currentMove % 2 == 1)
+         return true;
+      else
+         return false;
+   }
    void display(Position posHover, Position posSelect);
    Piece& get(Position pos);
    //void free();

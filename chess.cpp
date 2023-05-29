@@ -13,9 +13,10 @@ void callback(Interface* pUi, void* p)
 {
    Board board = *(Board*)p;
    Interface ui = *pUi;
-   if (!Position(ui.getPreviousPosition()).isValid() && !Position(ui.getSelectPosition()).isValid())
+   
+   if (Position(ui.getPreviousPosition()).isValid() && Position(ui.getSelectPosition()).isValid())
    {
-      if (board[ui.getSelectPosition()].getLetter() == ' ')
+      if (board[ui.getSelectPosition()].getLetter() == EMPTY)
       {
          ui.clearSelectPosition();
       }
@@ -23,7 +24,7 @@ void callback(Interface* pUi, void* p)
       {
          ui.clearSelectPosition();
       }
-   }
+   } 
 
    if (Position(ui.getPreviousPosition()).isValid() && Position(ui.getSelectPosition()).isValid())
    {
