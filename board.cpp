@@ -64,6 +64,25 @@ Board::Board(ogstream& gout)
 
 }
 
+void Board::display(Position posHover, Position posSelect)
+{
+	gout->drawBoard();
+	gout->drawHover(posHover.getLocation());
+	gout->drawSelected(posSelect.getLocation());
+
+	if (posSelect.isValid())
+	{
+		set<Move> possible;
+		board[posSelect.getLocation()]->getMoves(possible, *this);
+		set<Move>::iterator it;
+		for (it; it != possible.end(); it++)
+		{
+			Move move = *it;
+			gout->drawPossible(move.getDest().getLocation());
+		}
+	}
+}
+
 Piece& Board::get(Position pos) 
 {
 	char location = pos.getLocation();
