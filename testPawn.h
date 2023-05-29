@@ -67,7 +67,7 @@ private:
       board[blackPawn1].nMoves = 1;
       board[blackPawn2].lastMove = 1;
       board[blackPawn2].nMoves = 1;
-      board.setCurrentMove(1);
+      board.setCurrentMove(2);
       board[pos].nMoves = 1;
 
       //cout << board[pos].getLetter() << endl;
@@ -127,7 +127,7 @@ private:
       board[whitePawn1].nMoves = 1;
       board[whitePawn2].lastMove = 1;
       board[whitePawn2].nMoves = 1;
-      board.setCurrentMove(1);
+      board.setCurrentMove(2);
       board[pos].nMoves = 1;
 
       // exercise
