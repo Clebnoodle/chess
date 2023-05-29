@@ -13,7 +13,6 @@ private:
    ogstream *gout;
 
 public:
-   //Board();
    Board(ogstream & gout);
    int getCurrentMove() { return currentMove; }
    void setCurrentMove(int move) { currentMove = move; }
@@ -22,7 +21,7 @@ public:
    Piece& get(Position pos);
    //void free();
    //void reset();
-   //void move(Move move);
+   void move(Move move);
    //void assign(Move move);
    //void assertBoard();
    void swap(Position pos1, Position pos2);

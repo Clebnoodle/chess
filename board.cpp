@@ -82,3 +82,24 @@ void Board::swap(Position pos1, Position pos2)
 	board[end] = temp;
 	board[end]->setPosition(pos2);
 }
+
+void Board::move(Move move)
+{
+	string moveString = move.getText();
+
+	string::const_iterator it = moveString.cbegin();
+
+	// get the source
+	int col = *it - 'a';
+	it++;
+	int row = *it - '1';
+	it++;
+	Position source = Position(row, col);
+
+	// get the destination
+	col = *it - 'a';
+	it++;
+	row = *it - '1';
+	it++;
+	Position dest = Position(row, col);
+}
