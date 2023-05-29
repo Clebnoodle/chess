@@ -51,12 +51,13 @@ void callback(Interface* pUi, void* p)
 
 int main()
 {
+   TestPawn().run();
+   TestQueen().run();
+   std::cout << "Tests Passed!\n";
    Interface ui("Chess");
    ogstream gout;
    Board board(gout);
    ui.run(callback, &board);
-   TestPawn().run();
-   TestQueen().run();
-   std::cout << "Tests Passed!\n";
+   
 }
 
