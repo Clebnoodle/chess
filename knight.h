@@ -2,6 +2,14 @@
 #include "piece.h"
 #include "board.h"
 
+
+/***********************************************************************
+ * Header File:
+ *    KNIGHT: Knight Piece
+ *
+ * Summary:
+ *    Functions as a Knight Piece in a chess game.
+ ************************************************************************/
 class Knight :
     public Piece
 {

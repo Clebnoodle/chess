@@ -11,9 +11,19 @@ using namespace std;
 
 class Pawn;
 
+
+/***********************************************************************
+ * Header File:
+ *    TEST PAWN: Unit Test Class for the Pawn Class
+ *
+ * Summary:
+ *    Tests the functionality of the Pawn Class
+ ************************************************************************/
 class TestPawn
 {
 public:
+
+   //Test Runner
    void run()
    {
 

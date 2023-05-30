@@ -4,6 +4,13 @@
 #include "position.h"
 #include <set>
 
+/***********************************************************************
+ * Header File:
+ *    PAWN: Pawn Piece
+ *
+ * Summary:
+ *    Functions as a pawn in a chess game
+ ************************************************************************/
 class Pawn : public Piece
 {
 public:

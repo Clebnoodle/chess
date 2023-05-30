@@ -4,12 +4,29 @@ using std::string;
 using std::ostream;
 using std::istream;
 
+
+/***********************************************************************
+ * Structure:
+ *    DELTA: Delta for the movement of pieces
+ *
+ * Summary:
+ *    Contains the information about the horizontal (column) and 
+ *    vertical (row) adjustments for moving pieces
+ ************************************************************************/
 struct Delta
 {
    int row;
    int col;
 };
 
+
+/***********************************************************************
+ * Header File:
+ *    POSITION: Position of a piece in a chess game.
+ *
+ * Summary:
+ *    Stores the location of a chess piece on a chess board.
+ ************************************************************************/
 class Position
 {
 private:
@@ -18,6 +35,8 @@ private:
    double squareHeight;
 
 public:
+
+   //Constructors
    Position(): location(0), squareHeight(1), squareWidth(1) {}
    Position(std::string pos)
    {
@@ -34,14 +53,18 @@ public:
       squareHeight = 1;
       squareWidth = 1;
    };
+
+
+   //Getters
    int getLocation() const { return location; };
    int getRow() const { return location / 8; };
    int getColumn() const { return location % 8; };
 
-   //bool isValid() const { return (location >= 0 && location <= 63); };
+   //Checkers
    bool isInvalid() const { return location < 0 || location >= 64; }
    bool isValid()   const { return !isInvalid(); }
    
+   //Setters
    void setRow(int r)
    {
       if (r >= 0 && r < 8 && isValid())
@@ -67,6 +90,8 @@ public:
    {
       this->location = location;
    }
+
+   //Modifiers
    void adjustRow(int dRow) { location += dRow * 8; };
    void adjustCol(int dCol) 
    { 
@@ -81,7 +106,8 @@ public:
          location = -1;
       }
    }
-   //bool operator==(Position rhs);
+
+   //Operators
    const Position& operator=(const Position& rhs) 
    { 
       location = rhs.location;
@@ -89,11 +115,7 @@ public:
       squareWidth = rhs.squareWidth;
       return *this;
    }
-
    const Position& operator =  (const char* rhs);
-   //void operator+(Position rhs);
-   
-   //void operator>>(Position rhs);
 };
 
 ostream& operator << (ostream& out, const Position& pos);

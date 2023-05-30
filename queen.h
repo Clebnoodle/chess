@@ -4,6 +4,14 @@
 #include "position.h"
 #include "board.h"
 
+
+/***********************************************************************
+ * Header File:
+ *    QUEEN: Queen Piece
+ *
+ * Summary:
+ *    Functions as the Queen piece in the game of chess
+ ************************************************************************/
 class Queen : public Piece
 {
 public:

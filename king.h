@@ -1,6 +1,14 @@
 #pragma once
 #include "piece.h"
 #include "board.h"
+
+/***********************************************************************
+ * Header File:
+ *    KING: King Piece
+ *
+ * Summary:
+ *    Functions as the King piece in the game of chess
+ ************************************************************************/
 class King :
     public Piece
 {
