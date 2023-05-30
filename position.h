@@ -1,3 +1,13 @@
+/***********************************************************************
+ * Header File:
+ *    POSITION: Position of a piece in a chess game.
+ *
+ * Authors: Braeden Pope, Caleb Nuttall
+ *
+ * Summary:
+ *    Stores the location of a chess piece on a chess board.
+ ************************************************************************/
+
 #pragma once
 #include <string>
 using std::string;
@@ -19,14 +29,6 @@ struct Delta
    int col;
 };
 
-
-/***********************************************************************
- * Header File:
- *    POSITION: Position of a piece in a chess game.
- *
- * Summary:
- *    Stores the location of a chess piece on a chess board.
- ************************************************************************/
 class Position
 {
 private:

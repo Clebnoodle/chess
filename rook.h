@@ -1,9 +1,3 @@
-#pragma once
-#include "piece.h"
-#include "position.h"
-#include "board.h"
-
-
 /***********************************************************************
  * Header File:
  *    ROOK: Rook Piece
@@ -11,6 +5,17 @@
  * Summary:
  *    Functions as the Rook piece in the game of chess
  ************************************************************************/
+#pragma once
+#include "piece.h"
+#include "position.h"
+#include "board.h"
+
+
+/// <summary>
+/// 
+/// CLASS: ROOK
+/// 
+/// </summary>
 class Rook :
     public Piece
 {

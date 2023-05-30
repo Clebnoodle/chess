@@ -1,3 +1,12 @@
+/***********************************************************************
+ * Header File:
+ *    TEST QUEEN: Unit Test Class for the Queen Class
+ *
+ * Authors: Braeden Pope, Caleb Nuttall
+ * 
+ * Summary:
+ *    Test the functionality of the Queen Class
+ ************************************************************************/
 #pragma once
 #include "pawn.h"
 #include "position.h"
@@ -11,13 +20,11 @@ using namespace std;
 class Queen;
 
 
-/***********************************************************************
- * Header File:
- *    TEST QUEEN: Unit Test Class for the Queen Class
- *
- * Summary:
- *    Test the functionality of the Queen Class
- ************************************************************************/
+/// <summary>
+/// 
+///  Class: TEST QUEEN
+/// 
+/// </summary>
 class TestQueen
 {
 public:

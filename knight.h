@@ -1,15 +1,23 @@
+/***********************************************************************
+ * Header File:
+ *    KNIGHT: Knight Piece
+ *
+ * Authors: Braeden Pope, Caleb Nuttall
+ * 
+ * Summary:
+ *    Functions as a Knight Piece in a chess game.
+ ************************************************************************/
+
 #pragma once
 #include "piece.h"
 #include "board.h"
 
 
-/***********************************************************************
- * Header File:
- *    KNIGHT: Knight Piece
- *
- * Summary:
- *    Functions as a Knight Piece in a chess game.
- ************************************************************************/
+/// <summary>
+/// 
+/// CLASS: KNIGHT
+/// 
+/// </summary>
 class Knight :
     public Piece
 {

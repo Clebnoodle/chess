@@ -1,3 +1,13 @@
+/***********************************************************************
+ * Header File:
+ *    TEST PAWN: Unit Test Class for the Pawn Class
+ *
+ * Authors: Braeden Pope, Caleb Nuttall
+ * 
+ * Summary:
+ *    Tests the functionality of the Pawn Class
+ ************************************************************************/
+
 #pragma once
 #include "pawn.h"
 #include "position.h"
@@ -12,13 +22,11 @@ using namespace std;
 class Pawn;
 
 
-/***********************************************************************
- * Header File:
- *    TEST PAWN: Unit Test Class for the Pawn Class
- *
- * Summary:
- *    Tests the functionality of the Pawn Class
- ************************************************************************/
+/// <summary>
+/// 
+/// Class: TEST PAWN
+/// 
+/// </summary>
 class TestPawn
 {
 public:

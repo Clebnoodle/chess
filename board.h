@@ -1,3 +1,13 @@
+/***********************************************************************
+ * Header File:
+ *    BOARD: Chess Board
+ *
+ * Authors: Braeden Pope, Caleb Nuttall
+ * 
+ * Summary:
+ *    Functions as chess board in a game of chess
+ ************************************************************************/
+
 #pragma once
 #include "piece.h"
 #include "uiDraw.h"
@@ -6,13 +16,11 @@
 #include <cassert>
 
 
-/***********************************************************************
- * Header File:
- *    BOARD: Chess Board
- *
- * Summary:
- *    Functions as chess board in a game of chess
- ************************************************************************/
+/// <summary>
+/// 
+/// CLASS: BOARD
+/// 
+/// </summary>
 class Board
 {
 private:

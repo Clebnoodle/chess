@@ -1,3 +1,13 @@
+/***********************************************************************
+ * Header File:
+ *    QUEEN: Queen Piece
+ *
+ * Authors: Braeden Pope, Caleb Nuttall
+ * 
+ * Summary:
+ *    Functions as the Queen piece in the game of chess
+ ************************************************************************/
+
 #pragma once
 
 #include "piece.h"
@@ -5,13 +15,11 @@
 #include "board.h"
 
 
-/***********************************************************************
- * Header File:
- *    QUEEN: Queen Piece
- *
- * Summary:
- *    Functions as the Queen piece in the game of chess
- ************************************************************************/
+/// <summary>
+/// 
+/// CLASS: QUEEN
+/// 
+/// </summary>
 class Queen : public Piece
 {
 public:

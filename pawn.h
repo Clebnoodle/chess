@@ -1,16 +1,24 @@
+/***********************************************************************
+ * Header File:
+ *    PAWN: Pawn Piece
+ *
+ * Authors: Braeden Pope, Caleb Nuttall
+ * 
+ * Summary:
+ *    Functions as a pawn in a chess game
+ ************************************************************************/
 #pragma once
 
 #include "piece.h"
 #include "position.h"
 #include <set>
 
-/***********************************************************************
- * Header File:
- *    PAWN: Pawn Piece
- *
- * Summary:
- *    Functions as a pawn in a chess game
- ************************************************************************/
+
+/// <summary>
+/// 
+/// CLASS: PAWN
+/// 
+/// </summary>
 class Pawn : public Piece
 {
 public:

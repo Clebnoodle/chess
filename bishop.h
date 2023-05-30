@@ -1,15 +1,23 @@
+/***********************************************************************
+ * Header File:
+ *    BISHOP: Bishop Piece
+ *
+ * Authors: Braeden Pope, Caleb Nuttall
+ * 
+ * Summary:
+ *    Functions as the Bishop piece in the game of chess
+ ************************************************************************/
+
 #pragma once
 #include "piece.h"
 #include "board.h"
 
 
-/***********************************************************************
- * Header File:
- *    BISHOP: Bishop Piece
- *
- * Summary:
- *    Functions as the Bishop piece in the game of chess
- ************************************************************************/
+/// <summary>
+/// 
+/// CLASS: BISHOP
+/// 
+/// </summary>
 class Bishop :
     public Piece
 {

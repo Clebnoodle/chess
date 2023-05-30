@@ -1,3 +1,13 @@
+/***********************************************************************
+ * Header File:
+ *    PIECE: Chess Piece
+ *
+ * Author: Braeden Pope, Caleb Nuttall
+ * 
+ * Summary:
+ *    Functions as a piece in the game of chess
+ ************************************************************************/
+
 #pragma once
 #include "position.h"
 #include "move.h"
@@ -10,13 +20,11 @@ class TestPawn;
 class Board;
 
 
-/***********************************************************************
- * Header File:
- *    PIECE: Chess Piece
- *
- * Summary:
- *    Functions as a piece in the game of chess
- ************************************************************************/
+/// <summary>
+/// 
+/// CLASS: PIECE
+/// 
+/// </summary>
 class Piece
 {
    friend TestPawn;

@@ -1,3 +1,13 @@
+/***********************************************************************
+ * Header File:
+ *    MOVE: Move in a chess game.
+ *
+ * Authors: Braeden Pope, Caleb Nuttall
+ * 
+ * Summary:
+ *    Stores all information about a move performed in a chess game.
+ ************************************************************************/
+
 #pragma once
 #include "position.h"
 #include "pieceType.h"
@@ -6,13 +16,11 @@
 class Board;
 
 
-/***********************************************************************
- * Header File:
- *    MOVE: Move in a chess game.
- *
- * Summary:
- *    Stores all information about a move performed in a chess game.
- ************************************************************************/
+/// <summary>
+/// 
+/// CLASS: MOVE
+/// 
+/// </summary>
 class Move
 {
 private:
