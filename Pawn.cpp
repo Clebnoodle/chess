@@ -1,22 +1,38 @@
+/***********************************************************************
+ * Source File:
+ *    Pawn
+ * Author:
+ *    Braeden Pope, Caleb Nuttall
+ * Summary:
+ *    Represents a single pawn piece
+ ************************************************************************/
+
 #include "position.h"
 #include "pawn.h"
 #include "board.h"
-
-
 using namespace std;
 
+/******************************************
+ * PAWN : DISPLAY
+ * Draws our pawn in its location
+ ******************************************/
 void Pawn::display(ogstream& gout)
 {
 	gout.drawPawn(position.getLocation(), !isWhite());
 }
 
+/******************************************
+ * PAWN : GET MOVES
+ * Gets the moves our pawn can make
+ ******************************************/
 void Pawn::getMoves(set<Move>& moves, Board &board) 
 {
 
 	Position posMove = getPosition();
 	posMove.adjustRow(isWhite() ? 1 : -1);
 	Move move;
-
+	
+	// advance
 	if (posMove.isValid() && board[posMove].getLetter() == EMPTY)
 	{
 		move.setSrc(getPosition());
@@ -29,6 +45,8 @@ void Pawn::getMoves(set<Move>& moves, Board &board)
 		}
 		moves.insert(move);
 	}
+
+	// jump
 	if (!this->hasMoved())
 	{
 		posMove = Position(isWhite() ? 3 : 4, getPosition().getColumn());
@@ -43,6 +61,7 @@ void Pawn::getMoves(set<Move>& moves, Board &board)
 		}
 	}
 
+	// capture
 	for (int col = -1; col <= 1; col += 2) 
 	{
 		posMove = Position(position.getRow() + (isWhite() ? 1 : -1), position.getColumn() + col);
@@ -60,6 +79,7 @@ void Pawn::getMoves(set<Move>& moves, Board &board)
 		}
 	}
 
+	// enPassant
 	for (int col = -1; col <= 1; col += 2)
 	{
 		posMove = Position(position.getRow() + (isWhite() ? 1 : -1), position.getColumn() + col);

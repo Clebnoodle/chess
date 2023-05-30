@@ -130,7 +130,6 @@
     <ClCompile Include="bishop.cpp" />
     <ClCompile Include="board.cpp" />
     <ClCompile Include="chess.cpp" />
-    <ClCompile Include="empty.cpp" />
     <ClCompile Include="king.cpp" />
     <ClCompile Include="knight.cpp" />
     <ClCompile Include="move.cpp" />

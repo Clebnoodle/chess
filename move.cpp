@@ -1,3 +1,12 @@
+/***********************************************************************
+ * Source File:
+ *    MOVE : Keep track of a single chess move
+ * Author:
+ *    Br. Helfrich, Braeden Pope, Caleb Nuttall
+ * Summary:
+ *    Everything we need to know about a single chess move
+ ************************************************************************/
+
 #include "move.h"
 #include "position.h"
 #include <iostream>
@@ -6,7 +15,10 @@
 #include "board.h"
 using namespace std;
 
-
+/******************************************
+ * MOVE ASSIGNMENT OPERATOR
+ *       Creates move using smith notation
+ ******************************************/
 Move& Move::operator=(const char* move)
 {
 	Position start;
@@ -213,6 +225,11 @@ string Move::getText() const
    return sout.str();
 }
 
+/******************************************
+ * MOVE LESS THAN OPERATOR
+ *       Compares move destinations.
+ *       Needed for use by a set
+ ******************************************/
 bool Move::operator<(const Move& move) const
 {
    if (this->getDest().getLocation() < move.getDest().getLocation()) {

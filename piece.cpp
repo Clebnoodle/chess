@@ -1,11 +1,28 @@
+/***********************************************************************
+ * Source File:
+ *    Piece
+ * Author:
+ *    Braeden Pope, Caleb Nuttall
+ * Summary:
+ *    Represents a single piece
+ ************************************************************************/
+
 #include "piece.h"
 #include "board.h"
 
+/******************************************
+ * PIECE : GET MOVES
+ * No piece = no moves
+ ******************************************/
 void Piece::getMoves(std::set<Move>& moves, Board& board)
 {
 
 }
 
+/******************************************
+ * PIECE : GET MOVES SLIDE
+ * Used get the moves for our sliding pieces
+ ******************************************/
 void Piece::getMovesSlide(std::set<Move>& moves, Board& board, Delta delta[], int size)
 {
 	for (int i = 0; i < size; i++)
@@ -39,6 +56,10 @@ void Piece::getMovesSlide(std::set<Move>& moves, Board& board, Delta delta[], in
 	}
 }
 
+/******************************************
+ * PIECE : GET MOVES SLIDE
+ * Used get the moves for our non-sliding pieces
+ ******************************************/
 void Piece::getMovesNoSlide(std::set<Move>& moves, Board& board, Delta delta[], int size)
 {
 	for (int i = 0; i < size; i++)

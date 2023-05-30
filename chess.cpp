@@ -1,3 +1,10 @@
+/***********************************************************************
+ * Author:
+ *    Braeden Pope, Caleb Nuttall
+ * Summary:
+ *    Puts everything together to create our chess game
+ ************************************************************************/
+
 #include <iostream>
 #include "testPawn.h"
 #include "testQueen.h"
@@ -5,7 +12,10 @@
 #include "uiDraw.h"
 #include <set>
 
-
+ /******************************************
+  * CALLBACK
+  * Handles the logic of our chess game
+  ******************************************/
 void callback(Interface* pUi, void* p)
 {
    Board* pBoard = (Board*)p;
@@ -47,6 +57,10 @@ void callback(Interface* pUi, void* p)
    board.display(ui.getHoverPosition(), ui.getSelectPosition());
 }
 
+/******************************************
+ * MAIN
+ * Does all the things
+ ******************************************/
 int main()
 {
    TestPawn().run();

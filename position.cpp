@@ -1,3 +1,12 @@
+/***********************************************************************
+ * Source File:
+ *    Position : Location on the chess board
+ * Author:
+ *    Br. Helfrich
+ * Summary:
+ *    The position of a piece, the cursor, or a possible move on a chess board
+ ************************************************************************/
+
 #include "position.h"
 #include <iostream>
 

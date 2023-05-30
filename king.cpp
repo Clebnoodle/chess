@@ -1,15 +1,31 @@
+/***********************************************************************
+ * Source File:
+ *    King
+ * Author:
+ *    Braeden Pope, Caleb Nuttall
+ * Summary:
+ *    Represents a single king piece
+ ************************************************************************/
+
 #include "king.h"
 #include "position.h"
 #include "piece.h"
 #include <set>
 using namespace std;
 
-
+/******************************************
+ * KING : DISPLAY
+ * Draws our king in its location
+ ******************************************/
 void King::display(ogstream& gout)
 {
 	gout.drawKing(position.getLocation(), !isWhite());
 }
 
+/******************************************
+ * KING : GET MOVES
+ * Gets the moves our king can make
+ ******************************************/
 void King::getMoves(set<Move>& moves, Board& board)
 {
 	Delta delta[8] =

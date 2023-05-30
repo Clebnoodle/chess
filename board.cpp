@@ -1,3 +1,12 @@
+/***********************************************************************
+ * Source File:
+ *    Board
+ * Author:
+ *    Braeden Pope, Caleb Nuttall
+ * Summary:
+ *    A collection of pieces
+ ************************************************************************/
+
 #include "board.h"
 #include "piece.h"
 #include "pawn.h"
@@ -11,11 +20,15 @@
 
 using namespace std;
 
+/******************************************
+ * BOARD : CONSTRUCTOR
+ * Creates our board with all the pieces set
+ ******************************************/
 Board::Board(ogstream& gout)
 {
 	this->gout = &gout;
 	this->currentMove = 1;
-	//Piece board[64];
+
 	for (int i = 8; i < 16; i++)
 	{
 		board[i] = new Pawn(1, i - 8, true);
@@ -65,6 +78,10 @@ Board::Board(ogstream& gout)
 
 }
 
+/******************************************
+ * BOARD : DISPLAY
+ * Draws our board and all its pieces
+ ******************************************/
 void Board::display(Position posHover, Position posSelect)
 {
 	gout->drawBoard();
@@ -89,12 +106,20 @@ void Board::display(Position posHover, Position posSelect)
 	}
 }
 
+/******************************************
+ * BOARD : GET
+ * Gets the piece at a given position
+ ******************************************/
 Piece& Board::get(Position pos) 
 {
 	char location = pos.getLocation();
 	return *board[location];
 }
 
+/******************************************
+ * BOARD : SWAP
+ * Swaps the positions of two pieces
+ ******************************************/
 void Board::swap(Position pos1, Position pos2)
 {
 	char start = pos1.getLocation();
@@ -108,11 +133,19 @@ void Board::swap(Position pos1, Position pos2)
 	board[end]->setPosition(pos2);
 }
 
+/******************************************
+ * BOARD : KILL
+ * Replaces the given piece with an empty space
+ ******************************************/
 void Board::kill(Position pos)
 {
 	board[pos.getLocation()] = new Empty(pos.getLocation());
 }
 
+/******************************************
+ * BOARD : MOVE
+ * Carries out a move
+ ******************************************/
 void Board::move(Move move)
 {
 	string moveString = move.getText();
