@@ -39,13 +39,13 @@
     <ClCompile Include="bishop.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Queen.cpp">
+    <ClCompile Include="queen.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="king.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Pawn.cpp">
+    <ClCompile Include="pawn.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="move.cpp">
