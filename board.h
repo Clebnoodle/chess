@@ -5,6 +5,14 @@
 #include "move.h"
 #include <cassert>
 
+
+/***********************************************************************
+ * Header File:
+ *    BOARD: Chess Board
+ *
+ * Summary:
+ *    Functions as chess board in a game of chess
+ ************************************************************************/
 class Board
 {
 private:
@@ -25,11 +33,7 @@ public:
    }
    void display(Position posHover, Position posSelect);
    Piece& get(Position pos);
-   //void free();
-   //void reset();
    void move(Move move);
-   //void assign(Move move);
-   //void assertBoard();
    void swap(Position pos1, Position pos2);
    void kill(Position pos);
    

@@ -5,6 +5,14 @@
 
 class Board;
 
+
+/***********************************************************************
+ * Header File:
+ *    MOVE: Move in a chess game.
+ *
+ * Summary:
+ *    Stores all information about a move performed in a chess game.
+ ************************************************************************/
 class Move
 {
 private:
@@ -39,12 +47,8 @@ public:
    // setters
    void setSrc(Position pos) { source = pos; }
    void setDest(Position pos) { dest = pos; }
-   
-   
-   
    void setEnPassant() { enPassant = true; }
    void setPromotion(PieceType pt) { piece = pt; }
-
    void setCastle(bool isKing)
    {
       if (isKing)

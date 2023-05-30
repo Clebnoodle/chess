@@ -3,6 +3,14 @@
 #include "position.h"
 #include "board.h"
 
+
+/***********************************************************************
+ * Header File:
+ *    ROOK: Rook Piece
+ *
+ * Summary:
+ *    Functions as the Rook piece in the game of chess
+ ************************************************************************/
 class Rook :
     public Piece
 {

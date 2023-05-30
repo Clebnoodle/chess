@@ -10,9 +10,19 @@ using namespace std;
 
 class Queen;
 
+
+/***********************************************************************
+ * Header File:
+ *    TEST QUEEN: Unit Test Class for the Queen Class
+ *
+ * Summary:
+ *    Test the functionality of the Queen Class
+ ************************************************************************/
 class TestQueen
 {
 public:
+
+   //Test Runner
    void run()
    {
       test_queen_noMoves();

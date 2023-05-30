@@ -2,6 +2,14 @@
 #include "piece.h"
 #include "board.h"
 
+
+/***********************************************************************
+ * Header File:
+ *    BISHOP: Bishop Piece
+ *
+ * Summary:
+ *    Functions as the Bishop piece in the game of chess
+ ************************************************************************/
 class Bishop :
     public Piece
 {
