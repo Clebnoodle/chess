@@ -7,6 +7,11 @@
 class Queen : public Piece
 {
 public:
+	Queen(Position pos, bool isWhite)
+	{
+		this->position = pos;
+		this->fWhite = isWhite;
+	}
 	Queen(int row, int col, bool isWhite)
 	{
 		this->position = Position(row, col);

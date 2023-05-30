@@ -70,8 +70,6 @@ private:
       board.setCurrentMove(2);
       board[pos].nMoves = 1;
 
-      //cout << board[pos].getLetter() << endl;
-
       // exercise
       set<Move> moves;
       Piece test = board[pos];

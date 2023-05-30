@@ -37,6 +37,13 @@ public:
    bool isWhite() { return fWhite; };
    bool hasMoved() { return nMoves != 0; }
    int getNMoves() { return nMoves; };
+
+   void move(int currentMove)
+   {
+      lastMove = currentMove;
+      nMoves++;
+   }
+
    Position getPosition() { return position; }
    void setPosition(Position pos) {
 

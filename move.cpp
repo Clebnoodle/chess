@@ -3,6 +3,7 @@
 #include <iostream>
 #include <sstream>
 #include <cassert>
+#include "board.h"
 using namespace std;
 
 
@@ -54,6 +55,24 @@ const Move& Move::operator = (const Move& rhs)
    isWhite = rhs.getWhiteMove();
    error = rhs.error;
    return *this;
+}
+
+/***********************************************
+ * MOVE : COMPLETE
+ * We have a move that has nothing but a source
+ * and a destination. Figure out what it should be
+ **********************************************/
+void Move::complete(const Board& board)
+{
+   // set the capture
+   capture = board[dest].getLetter();
+
+   // set the color
+   isWhite = board[source].isWhite();
+
+   // handle if this is an en-passant
+   if (capture == EMPTY && board[source].getLetter() == PAWN)
+      enPassant = true;
 }
 
 /***********************************************

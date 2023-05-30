@@ -27,8 +27,8 @@ void King::getMoves(set<Move>& moves, Board& board)
 		Position posMove = Position(position.getRow(), 6);
 		Position posRook = Position(position.getRow(), 7);
 
-		if (board[posSpace].getLetter() == ' ' && board[posMove].getLetter() == ' ' && 
-			board[posRook].getLetter() == 'r' && !board[posRook].hasMoved())
+		if (board[posSpace].getLetter() == EMPTY && board[posMove].getLetter() == EMPTY &&
+			board[posRook].getLetter() == ROOK && !board[posRook].hasMoved())
 		{
 			Move move;
 			move.setSrc(getPosition());
@@ -47,8 +47,8 @@ void King::getMoves(set<Move>& moves, Board& board)
 		Position posRook = Position(position.getRow(), 0);
 		
 
-		if (board[posSpace1].getLetter() == ' ' && board[posSpace2].getLetter() == ' ' && 
-			board[posMove].getLetter() == ' ' && board[posRook].getLetter() == 'r' && !board[posRook].hasMoved())
+		if (board[posSpace1].getLetter() == EMPTY && board[posSpace2].getLetter() == EMPTY && 
+			board[posMove].getLetter() == EMPTY && board[posRook].getLetter() == ROOK && !board[posRook].hasMoved())
 		{
 			Move move;
 			move.setSrc(getPosition());

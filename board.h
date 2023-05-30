@@ -31,8 +31,9 @@ public:
    //void assign(Move move);
    //void assertBoard();
    void swap(Position pos1, Position pos2);
+   void kill(Position pos);
    
-   Piece& operator[](Position pos)
+   Piece& operator[](Position pos) const
    {
       char location = pos.getLocation();
       assert(pos.getRow() >= 0 && pos.getRow() <= 7);

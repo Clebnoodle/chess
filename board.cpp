@@ -7,6 +7,7 @@
 #include "bishop.h"
 #include "queen.h"
 #include "king.h"
+#include <iostream>
 
 using namespace std;
 
@@ -107,6 +108,11 @@ void Board::swap(Position pos1, Position pos2)
 	board[end]->setPosition(pos2);
 }
 
+void Board::kill(Position pos)
+{
+	board[pos.getLocation()] = new Empty(pos.getLocation());
+}
+
 void Board::move(Move move)
 {
 	string moveString = move.getText();
@@ -114,16 +120,38 @@ void Board::move(Move move)
 	string::const_iterator it = moveString.cbegin();
 
 	// get the source
-	int col = *it - 'a';
-	it++;
-	int row = *it - '1';
-	it++;
-	Position source = Position(row, col);
+	Position source = move.getSrc();
 
 	// get the destination
-	col = *it - 'a';
-	it++;
-	row = *it - '1';
-	it++;
-	Position dest = Position(row, col);
+	Position dest = move.getDest();
+
+	swap(source, dest);
+	if (move.getEnPassant())
+	{
+		dest.adjustRow(move.getWhiteMove() ? -1 : 1);
+		kill(dest);
+	}
+	else if (move.getCastleK())
+	{
+		Position rookPos(dest.getRow(), 7);
+		swap(rookPos, Position(rookPos.getRow(), 5));
+	}
+	else if (move.getCastleQ())
+	{
+		Position rookPos(dest.getRow(), 0);
+		swap(rookPos, Position(rookPos.getRow(), 3));
+	}
+	else if (move.getCapture() != EMPTY)
+	{
+		kill(source);
+	}
+
+	if (move.getPromotion() != EMPTY)
+	{
+		board[dest.getLocation()] = new Queen(dest, move.getWhiteMove());
+	}
+
+	board[dest.getLocation()]->move(currentMove);
+	currentMove++;
+	
 }

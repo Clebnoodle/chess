@@ -3,6 +3,8 @@
 #include "pieceType.h"
 #include <string>
 
+class Board;
+
 class Move
 {
 private:
@@ -58,6 +60,8 @@ public:
    void setWhiteMove(bool isWhite) { this->isWhite = isWhite; }
    void assign(Move move);
    void assign(std::string move);
+
+   void complete(const Board& board);
 
    char letterFromPieceType(PieceType pt) const;
    string getText() const;

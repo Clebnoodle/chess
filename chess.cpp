@@ -1,6 +1,3 @@
-// chess.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
 #include <iostream>
 #include "testPawn.h"
 #include "testQueen.h"
@@ -11,16 +8,17 @@
 
 void callback(Interface* pUi, void* p)
 {
-   Board board = *(Board*)p;
+   Board* pBoard = (Board*)p;
+   Board& board = *pBoard;
    Interface ui = *pUi;
    
-   if (Position(ui.getPreviousPosition()).isValid() && Position(ui.getSelectPosition()).isValid())
+   if (!Position(ui.getPreviousPosition()).isValid() && Position(ui.getSelectPosition()).isValid())
    {
       if (board[ui.getSelectPosition()].getLetter() == EMPTY)
       {
          ui.clearSelectPosition();
       }
-      else if (board[ui.getSelectPosition()].isWhite() == board.whiteTurn())
+      else if (board[ui.getSelectPosition()].isWhite() == !board.whiteTurn())
       {
          ui.clearSelectPosition();
       }
@@ -31,7 +29,7 @@ void callback(Interface* pUi, void* p)
       Move move;
       move.setSrc(ui.getPreviousPosition());
       move.setDest(ui.getSelectPosition());
-      //move.complete(board);
+      move.complete(board);
       set<Move> possible;
       board[ui.getPreviousPosition()].getMoves(possible, board);
 
